@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://127.0.0.1:27017/project4', {
+mongoose.connect('mongodb://127.0.0.1:27017/nova', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
