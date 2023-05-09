@@ -1,12 +1,32 @@
-import React from "react";
-import { Container, Header } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
+import { Header, Segment, Image, Icon } from "semantic-ui-react";
 import '../Header/Header.css'
 
-export default function PageHeader() {
+function PageHeader({ loggedUser, handleLogout }) {
   return (
-        <div id='headdiv'>
-            <Header id ='head' as="h2"><header>Header Goes Here</header></Header>
-        </div>
-      );
+    <Segment clearing>
+      <Header as="h2" floated="right">
+        <Link to="/">
+          <Icon name="home"></Icon>
+        </Link>
+        <Link to="" onClick={handleLogout}>
+          Logout
+        </Link>
+      </Header>
+      <Header as="h2" floated="left">
+        <Link to={`/${loggedUser?.username}`}>
+        <Image
+            src={
+              loggedUser?.photoUrl
+                ? loggedUser?.photoUrl
+                : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+            }
+            avatar
+          ></Image>
+        </Link>
+      </Header>
+    </Segment>
+  );
 }
 
+export default PageHeader;
