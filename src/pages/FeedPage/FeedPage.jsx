@@ -5,16 +5,17 @@ import PageHeader from "../../components/Header/Header";
 import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
 
+
 import { Grid } from "semantic-ui-react";
 
-export default function FeedPage() {
+export default function FeedPage(loggedUser, handleLogout) {
 
 
   return (
     <Grid centered>
       <Grid.Row>
         <Grid.Column>
-          <PageHeader />
+          <PageHeader loggedUser={loggedUser} handleLogout={handleLogout}/>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>

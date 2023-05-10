@@ -1,10 +1,8 @@
 import tokenService from './tokenService';
-// import axios from 'axios';
-
-
-
+import axios from 'axios';
 
 const BASE_URL = '/api/users/';
+
 
 function signup(user) {
   return (
@@ -53,5 +51,5 @@ export default {
   signup, 
   getUser,
   logout,
-  login
+  login,
 };
