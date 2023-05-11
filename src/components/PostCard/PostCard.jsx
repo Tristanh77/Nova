@@ -15,7 +15,8 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser  }) {
         likedIndex > -1
             ? () => removeLike(post.likes[likedIndex]._id)
             : () => addLike(post._id);
-            console.log(post._id, likedIndex, 'like clicked')
+            console.log(loggedUser, likedIndex, 'like clicked')
+        
 
     return (
         <Card raised>
