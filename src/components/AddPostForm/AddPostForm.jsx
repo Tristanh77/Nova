@@ -70,6 +70,7 @@ const AddPostForm = () => {
   
 
   return (
+    <>
     <div>
       <form onSubmit={handleSearch}>
         <label>
@@ -92,6 +93,7 @@ const AddPostForm = () => {
      </form>
 
     </div>
+    <Link to='/feed'><div>Back to Feed Page</div></Link></>
   );
 };
 
