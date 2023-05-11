@@ -9,20 +9,20 @@ function PageHeader({ loggedUser, handleLogout }) {
         <Link to="/">
           <Icon name="home"></Icon>
         </Link>
-        <Link to="" onClick={handleLogout}>
+        <Link to="/" onClick={handleLogout}>
           Logout
         </Link>
       </Header>
       <Header as="h2" floated="left">
-        <Link to={`/${loggedUser?.username}`}>
-        <Image
+        <Link to={`/${loggedUser?.username}`}> 
+        {/* <Image
             src={
               loggedUser?.photoUrl
                 ? loggedUser?.photoUrl
                 : "https://react.semantic-ui.com/images/wireframe/square-image.png"
             }
             avatar
-          ></Image>
+          ></Image> */}
         </Link>
       </Header>
     </Segment>

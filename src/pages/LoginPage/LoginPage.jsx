@@ -40,7 +40,7 @@ export default function LoginPage(props) {
       // Route to wherever you want!
       // We call handleSignUpOrLogin, to decode that token from localstorage and store in our App component's state
       props.handleSignUpOrLogin();
-      navigate("/");
+      navigate("/feed");
     } catch (err) {
       // Invalid user data (probably duplicate email)
       // this is from the throw block in the userService.login first then function

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../AddPostForm/AddPostForm.css'
 import { Button, Form, Segment} from 'semantic-ui-react'
 import * as postsApi from '../../utils/postApi'
+import { useNavigate, Link } from "react-router-dom";
 
 const AddPostForm = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,6 +12,7 @@ const AddPostForm = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const [caption, setCaption] = useState('')
   const API_KEY = '8pFeuVJ1uZecQFD1COzwzfXo5cweGlqOdEQ3RaRT';
+  const navigate = useNavigate();
   
   const handleClick = (imgUrl) => {
     setSelectedImage(imgUrl);
@@ -45,7 +47,8 @@ const AddPostForm = () => {
       const responseData = await postsApi.create(post); 
       console.log(responseData, " response from the server");
     //   setPosts([responseData.data, ...posts]); 
-        console.log(post.append, 'post no error')
+        console.log(post, 'post no error')
+        navigate('/feed')
     } catch (err) {
         console.log(post, 'post error')
       console.log(err, " error in addPost");
