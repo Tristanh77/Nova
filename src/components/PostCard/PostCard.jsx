@@ -3,8 +3,19 @@ import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import '../PostCard/PostCard.css'
 
-function PostCard({ post, isProfile, loggedUser }) { 
-    // console.log(loggedUser, "<--from postCard");
+function PostCard({ post, isProfile, removeLike, addLike, loggedUser  }) { 
+    console.log(loggedUser, "<--from postCard");
+    const likedIndex = post.likes.findIndex(
+        (like) => like.username === loggedUser.username
+      );
+
+    const likeColor = likedIndex > -1 ? "red" : "grey";
+
+    const clickHandler =
+        likedIndex > -1
+            ? () => removeLike(post.likes[likedIndex]._id)
+            : () => addLike(post._id);
+            console.log(post._id, likedIndex, 'like clicked')
 
     return (
         <Card raised>
@@ -33,12 +44,12 @@ function PostCard({ post, isProfile, loggedUser }) {
           </Card.Content>
           <Card.Content extra textAlign={"right"}>
             <Icon
-              name={"heart"}
-              size="large"
-            //   color={likeColor}
-            //   onClick={clickHandler}
+                name={"heart"}
+                size="large"
+                color={likeColor}
+                onClick={clickHandler}
             />
-            {/* {post.likes.length} Likes */}
+            {post.likes.length} Likes
           </Card.Content>
         </Card>
       );

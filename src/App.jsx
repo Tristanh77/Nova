@@ -24,29 +24,7 @@ function App() {
     userService.logout();
     setUser(null);
   }
-    // if (user) {
-    //   return (
-    //   <Routes>
-    //     <Route path="/" element={<HomePage />} />
-    //     <Route
-    //       path="/login"
-    //       element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
-    //     />
-    //     <Route
-    //         path="/signup"
-    //         element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
-    //       />
-          // <Route
-          // path="/add"
-          // element={<AddPostForm/>}
-          // />
-      //     <Route
-      //     path="/feed"
-      //     element={<FeedPage loggedUser={user} handleLogout={handleLogout}/>} />
-      // </Routes>
-    // );}}
     if (user) {
-      // are we logged in?
       return (
         <Routes>
           <Route path="/" element={<HomePage loggedUser={user} handleLogout={handleLogout}/>} />   
