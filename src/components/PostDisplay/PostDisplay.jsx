@@ -4,13 +4,13 @@ import PostCard from "../PostCard/PostCard";
 import Loader from "../Loader/Loader";
 
 export default function PostDisplay({
-  posts,
-  numPhotosCol,
-  isProfile,
-  loading,
-//   addLike,
-//   removeLike,
-  loggedUser
+    posts,
+    numPhotosCol,
+    isProfile,
+    loading,
+    addLike,
+    removeLike,
+    loggedUser
 }) {
   if (loading) {
     return (
@@ -24,7 +24,7 @@ export default function PostDisplay({
         <Card.Group itemsPerRow={numPhotosCol} stackable>
           {posts.map((post) => {
             return (
-              <PostCard post={post} key={post._id} isProfile={isProfile} loggedUser={loggedUser}/>
+              <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike} loggedUser={loggedUser}/>
             );
           })}
         </Card.Group>
@@ -37,7 +37,7 @@ export default function PostDisplay({
     <div>
       {posts.map((post) => {
         console.log('from post display')
-        return <PostCard post={post} key={post._id} isProfile={isProfile} loggedUser={loggedUser}/>;
+        return <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike}loggedUser={loggedUser}/>;
       })}
       </div>
     // </Card.Group>

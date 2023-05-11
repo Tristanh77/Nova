@@ -58,7 +58,6 @@ async function index(req, res){
         // when you fetch teh posts
         const posts = await Post.find({}).populate('user').exec()
         res.status(200).json({posts: posts})
-        console.log(posts, 'posts index')
     } catch(err){
 
     }

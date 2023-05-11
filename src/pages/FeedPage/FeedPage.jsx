@@ -8,12 +8,13 @@ import AddPostForm from "../../components/AddPostForm/AddPostForm";
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
 import Loader from "../../components/Loader/Loader";
 import * as postsApi from "../../utils/postApi";
+import * as likesApi from '../../utils/likesApi';
 import '../FeedPage/FeedPage.css'
 
 import { Grid } from "semantic-ui-react";
 
 export default function FeedPage(loggedUser, handleLogout) {
-    const [posts, setPosts] = useState([]); /// array of objects, the posts contain the likes
+    const [posts, setPosts] = useState([]); 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -40,6 +41,24 @@ export default function FeedPage(loggedUser, handleLogout) {
         } catch (err) {
           console.log(err.message, " this is the error in getPosts");
           setLoading(false);
+        }
+      }
+      async function addLike(postId){
+        try {
+            console.log('feedpage add like hitting')
+            const data = await likesApi.create(postId);
+            getPosts()
+        } catch(err){
+            console.log(err, ' error in addLike')
+        }
+      }
+    
+      async function removeLike(likeId){
+        try {
+            const data = await likesApi.removeLike(likeId);
+            getPosts()
+        } catch(err){
+            console.log(err, ' err in remove Like')
         }
       }
       useEffect(() => {
@@ -72,8 +91,8 @@ export default function FeedPage(loggedUser, handleLogout) {
             numPhotosCol={1}
             isProfile={false}
             loading={loading}
-			// addLike={addLike}
-			// removeLike={removeLike}
+			addLike={addLike}
+			removeLike={removeLike}
 			loggedUser={loggedUser}
           />
         </Grid.Column>
