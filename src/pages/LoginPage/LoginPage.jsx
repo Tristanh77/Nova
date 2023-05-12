@@ -33,17 +33,10 @@ export default function LoginPage(props) {
     e.preventDefault();
 
     try {
-      // Making the POST request to /api/users/login on our express server
       await userService.login(state);
-      // ^ this await ends after we recieve the token from the server, and store in localstorage
-
-      // Route to wherever you want!
-      // We call handleSignUpOrLogin, to decode that token from localstorage and store in our App component's state
       props.handleSignUpOrLogin();
       navigate("/feed");
     } catch (err) {
-      // Invalid user data (probably duplicate email)
-      // this is from the throw block in the userService.login first then function
       setError(err.message);
     }
   }

@@ -10,7 +10,8 @@ export default function PostDisplay({
     loading,
     addLike,
     removeLike,
-    loggedUser
+    loggedUser, 
+    removePost
 }) {
   if (loading) {
     return (
@@ -24,7 +25,7 @@ export default function PostDisplay({
         <Card.Group itemsPerRow={numPhotosCol} stackable>
           {posts.map((post) => {
             return (
-              <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike} loggedUser={loggedUser}/>
+              <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike} loggedUser={loggedUser}  />
             );
           })}
         </Card.Group>
@@ -33,13 +34,13 @@ export default function PostDisplay({
   }
 
   return (
-    // <Card.Group itemsPerRow={numPhotosCol} stackable>
+
     <div>
       {posts.map((post) => {
         console.log('from post display')
-        return <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike}loggedUser={loggedUser}/>;
+        return <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike}loggedUser={loggedUser}  />;
       })}
       </div>
-    // </Card.Group>
+
   );
 }

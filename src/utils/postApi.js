@@ -20,8 +20,6 @@ export function create(data){
 
 
 
-
-
 export function getAll() {
 	return fetch(BASE_URL, {
 	  headers: {

@@ -3,7 +3,7 @@ import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import '../PostCard/PostCard.css'
 
-function PostCard({ post, isProfile, removeLike, addLike, loggedUser  }) { 
+function PostCard({ post, isProfile, removeLike, addLike, loggedUser }) { 
     console.log(loggedUser, "<--from postCard");
     const likedIndex = post.likes.findIndex(
         (like) => like.username === loggedUser.username
@@ -16,8 +16,9 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser  }) {
             ? () => removeLike(post.likes[likedIndex]._id)
             : () => addLike(post._id);
             console.log(loggedUser, likedIndex, 'like clicked')
-        
 
+
+        
     return (
         <Card raised>
           {isProfile ? (
@@ -54,7 +55,6 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser  }) {
           </Card.Content>
         </Card>
       );
-        // <div>post card</div>
     };
 
 export default PostCard;

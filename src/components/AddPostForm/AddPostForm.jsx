@@ -45,13 +45,9 @@ const AddPostForm = () => {
   async function handleAddPost(post) {
     try {
       const responseData = await postsApi.create(post); 
-      console.log(responseData, " response from the server");
-    //   setPosts([responseData.data, ...posts]); 
-        console.log(post, 'post no error')
         navigate('/feed')
     } catch (err) {
         console.log(post, 'post error')
-      console.log(err, " error in addPost");
     }
   }
   function handleSubmit(e){

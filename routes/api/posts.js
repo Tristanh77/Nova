@@ -5,7 +5,8 @@ const postsCtrl = require('../../controllers/posts');
 // const upload = multer()
 // /*---------- Public Routes ----------*/
 router.post('/', postsCtrl.create);
-router.get('/', postsCtrl.index)
+router.get('/', postsCtrl.index);
+router.delete('/:id', postsCtrl.deletePost)
 
 
 /*---------- Protected Routes ----------*/
