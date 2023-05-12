@@ -10,6 +10,7 @@ import userService from "./utils/userService";
 import handleLogout from './utils/userService';
 import FeedPage from "./pages/FeedPage/FeedPage";
 import AddPostForm from "./components/AddPostForm/AddPostForm";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   const [user, setUser] = useState(userService.getUser())
@@ -36,20 +37,21 @@ function App() {
             path="/signup"
             element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
           />
-          {/* <Route
-            path="/:username"
-            element={
-              <ProfilePage loggedUser={user} handleLogout={handleLogout} />
-            }
-          /> */}
           <Route
             path="/add"
             element={<AddPostForm/>}
           />
-            <Route
-          path="/feed"
-          element={<FeedPage loggedUser={user} handleLogout={handleLogout}/>} />
+          <Route
+            path="/feed"
+            element={<FeedPage loggedUser={user} handleLogout={handleLogout}/>} />
+          <Route
+            path="/:username"
+            element={
+            <ProfilePage loggedUser={user} handleLogout={handleLogout} />
+          }
+        />
         </Routes>
+        
       );
   }
   
