@@ -6,7 +6,7 @@ function PageHeader({ loggedUser, handleLogout }) {
   return (
     <Segment clearing>
       <Header as="h2" floated="right">
-        <Link to="/">
+        <Link to="/feed">
           <Icon name="home"></Icon>
         </Link>
         <Link to="/" onClick={handleLogout}>
@@ -15,14 +15,14 @@ function PageHeader({ loggedUser, handleLogout }) {
       </Header>
       <Header as="h2" floated="left">
         <Link to={`/${loggedUser?.username}`}> 
-        {/* <Image
+        <Image
             src={
               loggedUser?.photoUrl
                 ? loggedUser?.photoUrl
                 : "https://react.semantic-ui.com/images/wireframe/square-image.png"
             }
             avatar
-          ></Image> */}
+          ></Image>
         </Link>
       </Header>
     </Segment>
