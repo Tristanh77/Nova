@@ -1,0 +1,51 @@
+body  {
+    background-image: url('https://i.imgur.com/9xA8Uou.jpg');
+  background-size:cover;
+        -webkit-animation: slidein infinite;
+        animation: slidein 80s;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;              
+}
+
+@-webkit-keyframes slidein {
+from {background-position: top; background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+from {background-position: top;background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+
+}
+
+#welcome{
+    background-color: purple;
+    color: gray;
+}
+#signup{
+    padding-top: 250px;
+    padding-bottom: 60px;
+}
+        
+.words{
+    color: purple;
+    font-size: 70px;
+    padding: 30px;
+    font-family: 'Space Mono', monospace;
+}
+
+#nasaLogo{
+    display: block;
+    max-width:340px;
+    max-height:205px;
+    width: auto;
+    height: auto;
+    /* object-position: bottom 120px right 30px; */
+}
