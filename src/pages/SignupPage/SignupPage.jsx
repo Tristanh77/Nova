@@ -68,8 +68,8 @@ import {
     return (
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
         <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as="h2" color="purple" textAlign="center">
-            <Image id ="pluto" src="https://i.imgur.com/M9n8NLD.jpg" /> Sign Up
+            <Header id='sign' as="h2" color="purple" textAlign="center">
+            <div id='plutodiv'><Image className="ui centered image" id ="pluto" src="https://i.imgur.com/M9n8NLD.jpg" /></div> Sign Up
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Segment stacked>
@@ -105,7 +105,7 @@ import {
                 required
               />
               <Form.TextArea
-                label="bio"
+                label="Bio"
                 name="bio"
                 value={state.bio}
                 placeholder="Tell us more about yourself..."

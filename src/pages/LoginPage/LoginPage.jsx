@@ -44,12 +44,12 @@ export default function LoginPage(props) {
   return (
     <Grid
       textAlign="center"
-      style={{ height: "100vh", width: "100vw" }}
+      style={{ height: "100vh" }}
       verticalAlign="middle"
     >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="purple" textAlign="center">
-        <Image id ="pluto" src="https://i.imgur.com/M9n8NLD.jpg" /> Log-in to your account
+        <Header id='log' as="h2" color="purple" textAlign="center">
+        <div><Image className="ui centered image" id ="pluto" src="https://i.imgur.com/M9n8NLD.jpg" /> </div>Log-in To Your Account
         </Header>
         <Form onSubmit={handleSubmit}>
           <Segment stacked>

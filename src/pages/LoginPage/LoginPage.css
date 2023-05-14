@@ -1,0 +1,12 @@
+#pluto{
+    height: 200px;
+    width: 250px;
+}
+
+:root{
+    text-align: center;
+}
+
+#log{
+    font-family: 'Space Mono', monospace;
+  }
