@@ -10,10 +10,10 @@ Nova is a photo based social medial app that incorporates a space theme. Users c
 <img src="https://i.imgur.com/j3NNlKJ.jpg">
 
 ## Technologies used 
-Express, CSS, HTML, Javascipt, MongoDb, Semantic ui, Nasa's Image API, React, Token based authentication
+Express, CSS, HTML, Javascipt, MongoDb, Semantic ui, Nasa's Image API, React, Token based authentication, and AWS.
 
 ## Getting Started
-Deploy app:
+Deployed app: https://tristan-hartman-nova.onrender.com
 
 
 Trello board:
