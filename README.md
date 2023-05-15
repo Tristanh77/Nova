@@ -1,32 +1,28 @@
+# Nova
 
-# Mern Boilerplate
+Nova is a photo based social medial app that incorporates a space theme. Users can sign up using a profile picture and a custom bio and share posts using nasa's image database. Add your own caption for each photo. Other users can then see and like your posts. Click on the profile picture of the user's post to go to their profile page and check out what they have been up to.
 
-This is a mern Boilerplate using vite to compile the frontend.  
+## Screenshots
+<img src="https://i.imgur.com/0P1oXkh.jpg">
+<img src="https://i.imgur.com/CZcCMqD.jpg">
+<img src="https://i.imgur.com/YftLnUm.jpg">
+<img src="https://imgur.com/UNjyB4B">
+<img src="https://i.imgur.com/j3NNlKJ.jpg">
 
-##### Things to note
+## Technologies used 
+Express, CSS, HTML, Javascipt, MongoDb, Semantic ui, Nasa's Image API, React, Token based authentication
 
-1. The server code is using `import`, currently you have to add the file extension in the server code. 
-
-2.  Note the `index.html` for the code needed to be added for hot reloading and etc... 
-
-3. Code is setup to use `JWT` auth
-
-4. Take a look at the server.js code, there is some es6 things to setup `__dirname`
+## Getting Started
+Deploy app:
 
 
-#### Setup 
+Trello board:
+https://trello.com/b/brSLkfVY/nova
 
-1. ```npm install```
-2. ```npm run dev```
-3. setup `.env` file 
 
-- .env file 
+## Next Steps 
+1. Go to my next item in my ice box to allow users to uplod their own photos as well as use the api search
 
-```
-SECRET=seiRocks!
-```
+2. Implement a delete post and profile feature
 
-##### Starting the App
-
-- One terminal
-command - ```npm run dev```
+3. Allow users to follow other users and only have their posts show up in the feed
