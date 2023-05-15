@@ -22,10 +22,15 @@ const BUCKET_NAME = process.env.BUCKET
 
 
 async function signup(req, res) {
+
   console.log(req.body, ' < req.body', req.file, " <- req.filed")
+  
   if(!req.file) return res.status(400).json({error: "Please Submit a Photo!"});
+
   const filePath = `nova/${uuidv4()}-${req.file.originalname}`;
   const params = {Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer}; 
+
+  s3.upload(params, async function(err, data){
     if(err){
       console.log('===========================================')
       console.log(err, ' err from aws, either your bucket name is wrong or your keys arent correct');
@@ -42,8 +47,8 @@ async function signup(req, res) {
     } catch(err){
       res.status(400).json({error: err})
     }
-
-  }
+  })
+}
 
 async function login(req, res) {
  

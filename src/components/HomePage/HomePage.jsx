@@ -18,9 +18,9 @@ export default function HomePage(loggedUser, handleLogout){
         <>
 
         <section id = 'home'>
-            <div class='words' id='welcome'>Welcome to Nova</div>
-            <Link to='/signup'><div class='words' id="signup">Sign Up</div></Link>
-            <Link to='login'><div class='words' id = 'login'>Log In</div></Link>
+            <div className='words' id='welcome'>Welcome to Nova</div>
+            <Link to='/signup'><div className='words' id="signup">Sign Up</div></Link>
+            <Link to='login'><div className='words' id = 'login'>Log In</div></Link>
         </section>
         <div id='nasa'> <Image id ="nasaLogo" src="https://i.imgur.com/Rxz2UQI.png" /></div>
         </>

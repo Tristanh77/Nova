@@ -37,7 +37,7 @@ export default function PostDisplay({
 
     <div>
       {posts.map((post) => {
-        console.log('from post display')
+        // console.log('from post display')
         return <PostCard post={post} key={post._id} isProfile={isProfile} addLike={addLike} removeLike={removeLike}loggedUser={loggedUser}  />;
       })}
       </div>

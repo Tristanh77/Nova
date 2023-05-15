@@ -63,7 +63,7 @@ export default function FeedPage({loggedUser}) {
       );
     }
     return (
-      <Grid centered>
+      <Grid id='feedGrid' centered>
         <Grid.Row>
           <Grid.Column>
             <PageHeader loggedUser={loggedUser} />
@@ -71,7 +71,7 @@ export default function FeedPage({loggedUser}) {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column style={{ maxWidth: 450 }}>
-          <Link to='/add'><div>Add Post</div></Link>
+          <Link to='/add'><div id='add'>Add Post</div></Link>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
