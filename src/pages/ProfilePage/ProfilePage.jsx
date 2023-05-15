@@ -19,7 +19,7 @@ export default function ProfilePage({loggedUser, handleLogout}) {
 
 
   const { username } = useParams();
-  console.log(username, " <- Username from params");
+//   console.log(username, " <- Username from params");
 
   useEffect(() => {
  

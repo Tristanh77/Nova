@@ -3,3 +3,9 @@
     width: 50px;
     border-radius: 50%;
 }
+
+#postcard{
+    background-color: beige;
+    text-align: center;
+    align-self: center;
+}

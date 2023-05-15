@@ -1,5 +1,33 @@
 .returnImage{
     height: 300px;
     width: 300px;
+    border-color: beige;
+    border-style: double;
+}
+
+#search{
+    color: purple;
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+}
+
+form{
+    text-align: center;
+}
+
+#nasaSearch{
     padding: 20px;
+}
+
+#selectedImage{
+    border-color: purple;
+}
+
+.submitPage{
+    padding: 30px;
+}
+
+#back{
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
 }

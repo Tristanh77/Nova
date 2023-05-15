@@ -28,15 +28,15 @@ const AddPostForm = () => {
     try {
         const response = await fetch(`https://images-api.nasa.gov/search?q=${searchQuery}`);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         
 
       if (data.collection.items.length > 0) {
         setImageUrl(data.collection.items[0].links[0].href);        
-        console.log(imageUrl)
-        console.log(data.collection.items[1].links[0].href, '<--- second in array');
+        // console.log(imageUrl)
+        // console.log(data.collection.items[1].links[0].href, '<--- second in array');
         setImage2Url(data.collection.items[1].links[0].href)
-        console.log(image2Url, 'image 2')
+        // console.log(image2Url, 'image 2')
       }
     } catch (error) {
       console.log(error);
@@ -69,27 +69,27 @@ const AddPostForm = () => {
     <>
     <div>
       <form onSubmit={handleSearch}>
-        <label>
+       <div id='nasaSearch'> <label id='search'>
           Search Nasa's Image Library:
           <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </label>
-        <button type="submit">Search</button>
+        <button type="submit">Search</button></div>
         <div>
         {imageUrl && <img src={imageUrl} className='returnImage' alt="Nasa Library Image" onClick={() => handleClick(imageUrl)} />}
         {image2Url && <img src={image2Url} className='returnImage' alt="Nasa Library Image2" onClick={() => handleClick(image2Url)}/>}
-        {selectedImage && <img src={selectedImage} className='returnImage' alt="Selected Image" />}</div>
+        {selectedImage && <img src={selectedImage} className='returnImage' id='selectedImage' alt="Selected Image" />}</div>
 
       </form>
      <form onSubmit={handleSubmit}>
-        <Form.Input 
+        <div className='submitPage'><Form.Input 
 		    placeholder='Caption for this Image'
 		    name="caption"
-		    onChange={handleChange}/>
-        <Button type="submit">Add Post</Button>
+		    onChange={handleChange}/></div>
+        <div className='submitPage'><Button type="submit">Add Post</Button></div>
      </form>
 
     </div>
-    <Link to='/feed'><div>Back to Feed Page</div></Link></>
+    <Link to='/feed'><div className='submitPage' id='back'>Back to Feed Page</div></Link></>
   );
 };
 

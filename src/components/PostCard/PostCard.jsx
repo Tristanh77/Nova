@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import '../PostCard/PostCard.css'
 
 function PostCard({ post, isProfile, removeLike, addLike, loggedUser }) { 
-    console.log(loggedUser, "<--from postCard");
+    // console.log(loggedUser, "<--from postCard");
     const likedIndex = post.likes.findIndex(
         (like) => like.username === loggedUser.username
       );
@@ -15,12 +15,12 @@ function PostCard({ post, isProfile, removeLike, addLike, loggedUser }) {
         likedIndex > -1
             ? () => removeLike(post.likes[likedIndex]._id)
             : () => addLike(post._id);
-            console.log(loggedUser, likedIndex, 'like clicked')
+            // console.log(loggedUser, likedIndex, 'like clicked')
 
 
         
     return (
-        <Card raised>
+        <Card id='postcard' raised>
           {isProfile ? (
             ""
           ) : (
