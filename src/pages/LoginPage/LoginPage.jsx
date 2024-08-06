@@ -35,7 +35,7 @@ export default function LoginPage(props) {
     try {
       await userService.login(state);
       props.handleSignUpOrLogin();
-      navigate("/");
+      navigate("/feed");
     } catch (err) {
       setError(err.message);
     }
