@@ -25,4 +25,4 @@ https://trello.com/b/brSLkfVY/nova
 
 2. Implement a delete post and profile feature
 
-3. Allow users to follow other users and only have their posts show up in the feed
+3. Allow users to follow other users and only have their posts show up in the feed instead of all users showing 
